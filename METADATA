@@ -1,0 +1,40 @@
+# Format: google3/devtools/metadata/metadata.proto (go/google3metadata)
+
+name: "diff"
+
+description:
+  "Diff library in C++ of tokens of arbitrary type using "
+  "random-access iterators. Derived from the \"Diff\" third "
+  "of the DiffMatchPatch library C++ implementation in "
+  "google3/third_party/diff_match_patch/cpp/diff_match_patch.cpp "
+  "written by Neil Fraser (fraser@google.com) and described in "
+  "http://wiki.corp.google.com/twiki/bin/view/Main/DiffMatchPatch "
+  "http://code.google.com/p/google-diff-match-patch/"
+
+tricorder: {
+  options: {
+    clang_tidy: {
+      inherit_parent_configuration: false
+    }
+  }
+}
+
+third_party: {
+  identifier: {
+    type: "Archive"
+    value: "https://code.google.com/p/google-diff-match-patch/downloads/detail?name=diff_match_patch_20121119.zip"
+    version: "20121119"
+    primary_source: true
+  }
+  version: "20121119"
+  last_upgrade_date: {
+    year: 2015
+    month: 6
+    day: 29
+  }
+
+  # NOTE: The "local_modifications" field is entirely optional and may be
+  # removed if it's not useful for the package.
+  #     See go/thirdparty-metadata-local-modifications
+  local_modifications: "http://google3/third_party/diff/README.google?cl=97169845"
+}
